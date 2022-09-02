@@ -19,7 +19,7 @@ namespace Script
     public class GameManager : MonoSingleton<GameManager>
     {
         public GameState gameState = GameState.Start;
-
+        [SerializeField] public Material[] materials;
         private void Update()
         {
             if (Input.GetMouseButtonDown(0) && gameState == GameState.Start)

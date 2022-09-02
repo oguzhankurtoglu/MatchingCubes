@@ -37,14 +37,18 @@ namespace Script
 
         public void ClampPos()
         {
-            Touch touch = Input.GetTouch(0);
+            if (Input.touchCount>0)
+            {
+                _touch = Input.GetTouch(0);
 
-            var position = transform.position;
-            position = new Vector3(position.x + touch.deltaPosition.x*Time.fixedDeltaTime*playerSettings.rotationSensitivity, position.y,
-                position.z);
-            position = new Vector3(Mathf.Clamp(position.x, -playerSettings.clampPosX,playerSettings.clampPosX), position.y,
-                position.z);
-            transform.position = position;
+                var position = transform.position;
+                position = new Vector3(position.x + _touch.deltaPosition.x*Time.fixedDeltaTime*playerSettings.rotationSensitivity, position.y,
+                    position.z);
+                position = new Vector3(Mathf.Clamp(position.x, -playerSettings.clampPosX,playerSettings.clampPosX), position.y,
+                    position.z);
+                transform.position = position;
+            }
+          
         }
     }
 }
