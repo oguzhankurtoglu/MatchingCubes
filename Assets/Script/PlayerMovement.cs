@@ -32,7 +32,7 @@ namespace Script
         private void MovementZ()
         {
             _rigidbody.MovePosition(transform.position +
-                                    Vector3.forward * Time.deltaTime * playerSettings.forwardSpeed);
+                                    Vector3.forward * Time.fixedDeltaTime * playerSettings.forwardSpeed);
         }
 
         public void ClampPos()
@@ -44,6 +44,8 @@ namespace Script
                 var position = transform.position;
                 position = new Vector3(position.x + _touch.deltaPosition.x*Time.fixedDeltaTime*playerSettings.rotationSensitivity, position.y,
                     position.z);
+                
+                
                 position = new Vector3(Mathf.Clamp(position.x, -playerSettings.clampPosX,playerSettings.clampPosX), position.y,
                     position.z);
                 transform.position = position;

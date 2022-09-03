@@ -14,15 +14,12 @@ namespace Script
 
     public abstract class Cube : MonoBehaviour, ICube
     {
-        
-
         public CubeType cubeType = CubeType.Blue;
         public CubeType GetCubeType => cubeType;
         private MeshRenderer _meshRenderer;
 
         private void Awake()
         {
-            
             SetMaterial();
         }
 
@@ -33,6 +30,7 @@ namespace Script
 
         private void SetMaterial()
         {
+            if (_meshRenderer == null) return;
             _meshRenderer = transform.GetComponent<MeshRenderer>();
             _meshRenderer.material = cubeType switch
             {
