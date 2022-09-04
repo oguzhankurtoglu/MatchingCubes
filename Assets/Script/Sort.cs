@@ -15,7 +15,7 @@ namespace Script
             this._positionList = new List<Vector3>();
         }
 
-        public void RandomSort(ref List<Transform> stackList)
+        public List<GameObject> RandomSort(ref List<Transform> stackList)
         {
             foreach (var cube in stackList)
             {
@@ -30,9 +30,11 @@ namespace Script
             }
 
             _positionList.Clear();
+            CheckType checkType = new CheckType();
+            return checkType.CheckWholeList(ref stackList);
         }
 
-        public void OrderSort(ref List<Transform> stackList)
+        public List<GameObject> OrderSort(ref List<Transform> stackList)
         {
             foreach (var cube in stackList)
             {
@@ -48,6 +50,8 @@ namespace Script
             }
 
             _positionList.Clear();
+            CheckType checkType = new CheckType();
+            return checkType.CheckWholeList(ref stackList);
         }
     }
 }

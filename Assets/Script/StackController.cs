@@ -11,7 +11,7 @@ namespace Script
     {
         public List<Transform> stack = new();
         public Transform player;
-        private CheckType _checkType;
+        public CheckType _checkType;
         private Sort _sorting;
 
         private void Awake()
@@ -35,10 +35,18 @@ namespace Script
                 switch (gate.gateType)
                 {
                     case GateType.Random:
-                        _sorting.RandomSort(ref stack);
+                        foreach (var deletedItem in _sorting.RandomSort(ref stack))
+                        {
+                            Destroy(deletedItem);
+                        }
+
                         break;
                     case GateType.Order:
-                        _sorting.OrderSort(ref stack);
+                        foreach (var deletedItem in _sorting.OrderSort(ref stack))
+                        {
+                            Destroy(deletedItem);
+                        }
+
                         break;
                 }
             }
