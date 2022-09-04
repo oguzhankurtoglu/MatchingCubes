@@ -14,7 +14,7 @@ namespace Script
 
     public abstract class Cube : MonoBehaviour, ICube
     {
-        public CubeType cubeType = CubeType.Blue;
+        [SerializeField] private CubeType cubeType = CubeType.Blue;
         public CubeType GetCubeType => cubeType;
         private MeshRenderer _meshRenderer;
 

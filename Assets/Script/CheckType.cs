@@ -9,12 +9,12 @@ namespace Script
     [Serializable]
     public class CheckType
     {
-        public List<GameObject> _deletedList = new();
+        public List<GameObject> deletedList = new();
         public bool CheckLastPart(List<Transform> stackList, CubeType cubeType)
         {
             if (stackList.Count < 3) return false;
-            return stackList[^2].GetComponent<Collectible>().cubeType == cubeType &&
-                   stackList[^3].GetComponent<Collectible>().cubeType == cubeType;
+            return stackList[^2].GetComponent<Collectible>().GetCubeType == cubeType &&
+                   stackList[^3].GetComponent<Collectible>().GetCubeType == cubeType;
         }
 
         public List<GameObject> CheckWholeList(ref List<Transform> stackList)
@@ -22,13 +22,13 @@ namespace Script
             
             for (int i = stackList.Count - 1; i >= 2; i--)
             {
-                var type = stackList[i].GetComponent<Collectible>().cubeType;
-                if (stackList[i - 1].GetComponent<Collectible>().cubeType == type &&
-                    stackList[i - 2].GetComponent<Collectible>().cubeType == type)
+                var type = stackList[i].GetComponent<Collectible>().GetCubeType;
+                if (stackList[i - 1].GetComponent<Collectible>().GetCubeType == type &&
+                    stackList[i - 2].GetComponent<Collectible>().GetCubeType == type)
                 {
                     for (int j = 0; j < 3; j++)
                     {
-                        _deletedList.Add(stackList[i-j].gameObject);
+                        deletedList.Add(stackList[i-j].gameObject);
                         stackList.Remove(stackList[i - j]);
                     }
 
@@ -36,7 +36,7 @@ namespace Script
                 }
             }
 
-            return _deletedList;
+            return deletedList;
         }
     }
 }

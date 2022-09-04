@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Script
@@ -10,10 +12,11 @@ namespace Script
         Order
     }
 
-    public class Gate : MonoBehaviour
+    public abstract class Gate : MonoBehaviour
     {
         public GateType gateType = GateType.Order;
         private TextMeshPro _text;
+        protected readonly List<Vector3> PositionList = new List<Vector3>();
 
         private void Awake()
         {
@@ -35,5 +38,7 @@ namespace Script
                 _ => _text.text
             };
         }
+
+        public abstract List<GameObject> Sort(List<Transform> stackList);
     }
 }

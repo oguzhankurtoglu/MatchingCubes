@@ -17,7 +17,7 @@ namespace Script
         private void Awake()
         {
             _checkType = new CheckType();
-            _sorting = new Sort(true);
+            _sorting = new Sort();
         }
 
         private void OnTriggerEnter(Collider other)
@@ -32,23 +32,16 @@ namespace Script
 
             if (other.TryGetComponentInParent(out Gate gate))
             {
-                switch (gate.gateType)
+                foreach (var deletedItem in gate.Sort(stack))
                 {
-                    case GateType.Random:
-                        foreach (var deletedItem in _sorting.RandomSort(ref stack))
-                        {
-                            Destroy(deletedItem);
-                        }
-
-                        break;
-                    case GateType.Order:
-                        foreach (var deletedItem in _sorting.OrderSort(ref stack))
-                        {
-                            Destroy(deletedItem);
-                        }
-
-                        break;
+                    Destroy(deletedItem);
                 }
+            }
+
+            if (other.TryGetComponentInParent(out Obstacle _))
+            {
+                stack[^1].SetParent(null);
+                stack.RemoveAt(stack.Count - 1);
             }
         }
 
@@ -56,30 +49,27 @@ namespace Script
         {
             collectible.isCollected = true;
             cube.SetParent(player.parent);
-            if (stack.LastOrDefault() == null)
-            {
-                cube.transform.position = player.transform.position;
-                var item = player;
-                item.transform.DOMoveY(item.transform.position.y + item.transform.localScale.y, .5f)
-                    .SetEase(Ease.OutBack);
-            }
-            else
-            {
-                cube.transform.position = stack.LastOrDefault()!.transform.position;
-                var item = stack.LastOrDefault();
-                item.transform.DOMoveY(item.transform.position.y + item.transform.localScale.y, .5f)
-                    .SetEase(Ease.OutBack);
-            }
+
+            AddList(cube, stack.LastOrDefault() == null ? player : stack.LastOrDefault());
 
             cube.transform.DOScale(transform.localScale * .6f, .2f).SetLoops(2, LoopType.Yoyo);
             stack.Add(cube);
 
-            if (!_checkType.CheckLastPart(stack, collectible.cubeType)) return;
+            if (!_checkType.CheckLastPart(stack, collectible.GetCubeType)) return;
+
             for (int i = 0; i < 3; i++)
             {
                 Destroy(stack[^1].gameObject);
                 stack.RemoveAt(stack.Count - 1);
             }
+        }
+
+        private void AddList(Transform cube, Transform lastItem)
+        {
+            cube.transform.position = lastItem.transform.position;
+            var item = lastItem;
+            item.transform.DOMoveY(item.transform.position.y + item.transform.localScale.y, .5f)
+                .SetEase(Ease.OutBack);
         }
     }
 }

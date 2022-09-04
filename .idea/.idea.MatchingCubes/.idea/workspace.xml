@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13c467d0-daff-418f-93dd-e76db3ea775a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Script/OrderGate.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/OrderGate.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/RandomGate.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Script/RandomGate.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MatchingCubes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MatchingCubes/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Gate.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Gate.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/CheckType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/CheckType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Cube.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Cube.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Gate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Gate.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/Sort.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Sort.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/StackController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/StackController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
@@ -54,10 +62,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="21464">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="21464" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -73,7 +81,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662289336764</updated>
-      <workItem from="1662289361253" duration="5998000" />
+      <workItem from="1662289361253" duration="7541000" />
+      <workItem from="1662312935794" duration="2635000" />
     </task>
     <servers />
   </component>
@@ -83,6 +92,17 @@
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="false" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
