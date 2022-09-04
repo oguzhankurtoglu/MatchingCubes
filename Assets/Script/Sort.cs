@@ -28,11 +28,26 @@ namespace Script
             {
                 stackList[i].transform.position = _positionList[i];
             }
+
             _positionList.Clear();
         }
 
-        public void OrderSort()
+        public void OrderSort(ref List<Transform> stackList)
         {
+            foreach (var cube in stackList)
+            {
+                _positionList.Add(cube.transform.position);
+            }
+
+            stackList = stackList.Select(x => x.GetComponent<Collectible>()).OrderBy(y => y.cubeType)
+                .Select(x => x.transform).ToList();
+
+            for (int i = 0; i < stackList.Count; i++)
+            {
+                stackList[i].transform.position = _positionList[i];
+            }
+
+            _positionList.Clear();
         }
     }
 }

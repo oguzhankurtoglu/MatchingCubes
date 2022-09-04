@@ -32,13 +32,22 @@ namespace Script
         {
             _meshRenderer = transform.GetComponent<MeshRenderer>();
             if (_meshRenderer == null) return;
-            _meshRenderer.material = cubeType switch
+            switch (cubeType)
             {
-                CubeType.Blue => GameManager.Instance.materials[0],
-                CubeType.Red => GameManager.Instance.materials[1],
-                CubeType.Orange => GameManager.Instance.materials[2],
-                _ => _meshRenderer.material
-            };
+                case CubeType.Blue:
+                    _meshRenderer.material = GameManager.Instance.materials[0];
+                    gameObject.name = cubeType.ToString();
+                    break;
+                case CubeType.Red:
+                    _meshRenderer.material = GameManager.Instance.materials[1];
+                    gameObject.name = cubeType.ToString();
+
+                    break;
+                case CubeType.Orange:
+                    _meshRenderer.material = GameManager.Instance.materials[2];
+                    gameObject.name = cubeType.ToString();
+                    break;
+            }
         }
     }
 }

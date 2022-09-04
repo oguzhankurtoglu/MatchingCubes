@@ -32,9 +32,14 @@ namespace Script
 
             if (other.TryGetComponentInParent(out Gate gate))
             {
-                if (gate.gateType == GateType.Random)
+                switch (gate.gateType)
                 {
-                    _sorting.RandomSort(ref stack);
+                    case GateType.Random:
+                        _sorting.RandomSort(ref stack);
+                        break;
+                    case GateType.Order:
+                        _sorting.OrderSort(ref stack);
+                        break;
                 }
             }
         }
