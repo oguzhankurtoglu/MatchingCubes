@@ -14,14 +14,8 @@ namespace Script
     public class PlayerMovement : MonoBehaviour
     {
         public PlayerSettings playerSettings;
-        private Rigidbody _rigidbody;
         private Touch _touch;
-
-        private void Awake()
-        {
-            _rigidbody = GetComponent<Rigidbody>();
-        }
-
+        
         private void FixedUpdate()
         {
             if (GameManager.Instance.gameState != GameState.Play) return;
