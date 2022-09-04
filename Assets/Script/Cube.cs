@@ -30,8 +30,8 @@ namespace Script
 
         private void SetMaterial()
         {
-            if (_meshRenderer == null) return;
             _meshRenderer = transform.GetComponent<MeshRenderer>();
+            if (_meshRenderer == null) return;
             _meshRenderer.material = cubeType switch
             {
                 CubeType.Blue => GameManager.Instance.materials[0],

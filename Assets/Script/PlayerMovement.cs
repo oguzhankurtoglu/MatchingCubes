@@ -31,18 +31,19 @@ namespace Script
 
         private void MovementZ()
         {
-            _rigidbody.MovePosition(transform.position +
-                                    Vector3.forward * Time.fixedDeltaTime * playerSettings.forwardSpeed);
+            //_rigidbody.MovePosition(transform.position +
+            //                        Vector3.forward * Time.fixedDeltaTime * playerSettings.forwardSpeed);
+            transform.Translate(transform.forward*Time.deltaTime*playerSettings.forwardSpeed);
         }
 
-        public void ClampPos()
+        private void ClampPos()
         {
             if (Input.touchCount>0)
             {
                 _touch = Input.GetTouch(0);
 
                 var position = transform.position;
-                position = new Vector3(position.x + _touch.deltaPosition.x*Time.fixedDeltaTime*playerSettings.rotationSensitivity, position.y,
+                position = new Vector3(position.x + _touch.deltaPosition.x*Time.deltaTime*playerSettings.rotationSensitivity, position.y,
                     position.z);
                 
                 

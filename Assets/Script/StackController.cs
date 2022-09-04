@@ -10,9 +10,11 @@ namespace Script
     {
         public List<Transform> stack = new();
         public Transform player;
+        public CheckType checkType;
 
         private void Awake()
         {
+            checkType = new CheckType();
             stack.Add(player);
         }
 
@@ -33,17 +35,19 @@ namespace Script
             cube.SetParent(player.parent);
             cube.transform.position = stack.LastOrDefault()!.transform.position;
             cube.transform.DOScale(transform.localScale * .6f, .2f).SetLoops(2, LoopType.Yoyo);
-     //  foreach (var item in stack)
-     //  {
-     //        item.transform.DOMoveY(item.transform.position.y + item.transform.localScale.y, .5f)
-     //            .SetEase(Ease.OutBack);
-     //  }
 
             var item = stack.LastOrDefault();
             item.transform.DOMoveY(item.transform.position.y + item.transform.localScale.y, .5f)
                 .SetEase(Ease.OutBack);
 
             stack.Add(cube);
+
+            if (!checkType.CheckLastPart(stack, collectible.cubeType)) return;
+            for (int i = 0; i < 3; i++)
+            {
+                Destroy(stack[^1].gameObject);
+                stack.RemoveAt(stack.Count -1);
+            }
         }
     }
 }
