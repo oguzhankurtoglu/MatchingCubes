@@ -7,6 +7,7 @@ namespace Script
 {
     public enum CubeType
     {
+        None,
         Red,
         Blue,
         Orange

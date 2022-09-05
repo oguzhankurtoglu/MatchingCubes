@@ -16,10 +16,11 @@ namespace Script
     {
         public GateType gateType = GateType.Order;
         private TextMeshPro _text;
-        protected readonly List<Vector3> PositionList = new List<Vector3>();
+        public List<Vector3> PositionList;
 
         private void Awake()
         {
+            PositionList = new List<Vector3>();
             SetGateProperty();
         }
 
@@ -39,6 +40,7 @@ namespace Script
             };
         }
 
-        public abstract List<GameObject> Sort(List<Transform> stackList);
+        // public abstract List<GameObject> Sort(List<Transform> stackList);
+        //public abstract void Sort();
     }
 }

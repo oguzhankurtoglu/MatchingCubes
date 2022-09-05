@@ -11,13 +11,13 @@ namespace Script
     {
         public List<Transform> stack = new();
         public Transform player;
-        public CheckType _checkType;
-        private Sort _sorting;
+        public CheckType checkType;
+        public Sort Sorting;
 
         private void Awake()
         {
-            _checkType = new CheckType();
-            _sorting = new Sort();
+            Sorting = new Sort();
+            checkType = new CheckType();
         }
 
         private void OnTriggerEnter(Collider other)
@@ -32,9 +32,26 @@ namespace Script
 
             if (other.TryGetComponentInParent(out Gate gate))
             {
-                foreach (var deletedItem in gate.Sort(stack))
+                //foreach (var deletedItem in gate.Sort(stack))
+                //{
+                //    Destroy(deletedItem);
+                //}
+                switch (gate.gateType)
                 {
-                    Destroy(deletedItem);
+                    case GateType.Order:
+                        foreach (var deletedItem in Sorting.OrderSort(ref stack))
+                        {
+                            Destroy(deletedItem);
+                        }
+
+                        break;
+                    case GateType.Random:
+                        foreach (var deletedItem in Sorting.RandomSort(ref stack))
+                        {
+                            Destroy(deletedItem);
+                        }
+
+                        break;
                 }
             }
 
@@ -47,6 +64,7 @@ namespace Script
 
         private void AddCube(Transform cube, Collectible collectible)
         {
+            TrailManager.Instance.SetTrailMaterial(collectible.GetCubeType);
             collectible.isCollected = true;
             cube.SetParent(player.parent);
 
@@ -55,7 +73,7 @@ namespace Script
             cube.transform.DOScale(transform.localScale * .6f, .2f).SetLoops(2, LoopType.Yoyo);
             stack.Add(cube);
 
-            if (!_checkType.CheckLastPart(stack, collectible.GetCubeType)) return;
+            if (!checkType.CheckLastPart(stack, collectible.GetCubeType)) return;
 
             for (int i = 0; i < 3; i++)
             {
