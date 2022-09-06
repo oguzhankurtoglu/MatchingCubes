@@ -89,5 +89,20 @@ namespace Script
             item.transform.DOMoveY(item.transform.position.y + item.transform.localScale.y, .5f)
                 .SetEase(Ease.OutBack);
         }
+
+        public void FreezeCubes()
+        {
+            foreach (var cube in stack)
+            {
+                cube.GetComponent<Rigidbody>().isKinematic = true;
+            }
+        }
+        public void UnFreezeCubes()
+        {
+            foreach (var cube in stack)
+            {
+                cube.GetComponent<Rigidbody>().isKinematic = false;
+            }
+        }
     }
 }
