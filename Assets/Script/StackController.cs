@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -39,18 +40,10 @@ namespace Script
                 switch (gate.gateType)
                 {
                     case GateType.Order:
-                        foreach (var deletedItem in _sorting.OrderSort(ref stack))
-                        {
-                            Destroy(deletedItem);
-                        }
-
+                        StartCoroutine(RemoveCube(_sorting.OrderSort(ref stack)));
                         break;
                     case GateType.Random:
-                        foreach (var deletedItem in _sorting.RandomSort(ref stack))
-                        {
-                            Destroy(deletedItem);
-                        }
-
+                        StartCoroutine(RemoveCube(_sorting.RandomSort(ref stack)));
                         break;
                 }
             }
@@ -59,6 +52,28 @@ namespace Script
             {
                 stack[^1].SetParent(null);
                 stack.RemoveAt(stack.Count - 1);
+            }
+        }
+
+        private IEnumerator RemoveCube(List<GameObject> deletedList)
+        {
+            deletedList.Reverse();
+            var removeTime = deletedList.Count / 3;
+            for (var i = 0; i < removeTime; i++)
+            {
+                for (var j = 0; j < 3; j++)
+                {
+                    Destroy(deletedList[^1].gameObject);
+                    deletedList.RemoveAt(deletedList.Count-1);
+                }
+
+                yield return new WaitForSeconds(1f);
+            }
+
+            if (removeTime >= 3)
+            {
+                Debug.Log("Fever");
+                //FeverMode();
             }
         }
 
@@ -97,6 +112,7 @@ namespace Script
                 cube.GetComponent<Rigidbody>().isKinematic = true;
             }
         }
+
         public void UnFreezeCubes()
         {
             foreach (var cube in stack)

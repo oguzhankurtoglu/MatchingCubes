@@ -3,14 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="13c467d0-daff-418f-93dd-e76db3ea775a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MatchingCubes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MatchingCubes/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Boost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Boost.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/CameraFollower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/PlayerFollower.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/CameraFollower.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/PlayerFollower.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/PlayerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Ramp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Ramp.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/StackController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/StackController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/TrailManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/TrailManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +19,8 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6afd1274f120405096bc1ad9e2010ba6157a00/be/f375485e/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -58,10 +53,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="10752">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="10752" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -80,7 +75,7 @@
       <workItem from="1662289361253" duration="7541000" />
       <workItem from="1662312935794" duration="3490000" />
       <workItem from="1662338248667" duration="1468000" />
-      <workItem from="1662415258515" duration="7406000" />
+      <workItem from="1662415258515" duration="9471000" />
     </task>
     <servers />
   </component>
