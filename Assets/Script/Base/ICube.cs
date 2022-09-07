@@ -1,6 +1,4 @@
-using UnityEngine;
-
-namespace Script
+namespace Script.Base
 {
     public interface ICube
     {

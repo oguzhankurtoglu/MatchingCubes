@@ -1,10 +1,10 @@
-using System;
 using System.Collections;
-using System.Linq;
-using UnityEditor.Experimental.GraphView;
+using Script.Base;
+using Script.Controller;
+using Script.Manager;
 using UnityEngine;
 
-namespace Script
+namespace Script.Boost
 {
     public class Boost : MonoBehaviour
     {
@@ -20,7 +20,7 @@ namespace Script
         {
             var speed = playerMovement.playerSettings.forwardSpeed;
             playerMovement.playerSettings.forwardSpeed = playerMovement.playerSettings.boostSpeed;
-            playerMovement.GetComponent<TrailManager>().SetTrailMaterial(CubeType.None);
+            playerMovement.GetComponent<TrailController>().SetTrailMaterial(CubeType.None);
             FeedBackManager.Instance.StartBoostParticle();
 
             yield return new WaitForSeconds(duration);

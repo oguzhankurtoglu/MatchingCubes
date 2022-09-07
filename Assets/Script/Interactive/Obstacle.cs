@@ -1,9 +1,8 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Script
+namespace Script.Interactive
 {
     public class Obstacle : MonoBehaviour
     {

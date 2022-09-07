@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Game.Script.Other
+namespace Script.Other
 {
     public abstract class MonoSingleton <T> : MonoBehaviour where T : MonoSingleton<T>
     {

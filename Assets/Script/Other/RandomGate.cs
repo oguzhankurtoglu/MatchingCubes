@@ -1,8 +1,6 @@
-using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
+using Script.Interactive;
 
-namespace Script
+namespace Script.Other
 {
     public class RandomGate : Gate
     {

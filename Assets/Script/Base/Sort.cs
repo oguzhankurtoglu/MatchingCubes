@@ -1,10 +1,10 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
+using Script.Interactive;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Script
+namespace Script.Base
 {
     public class Sort
     {

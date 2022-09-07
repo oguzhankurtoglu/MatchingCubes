@@ -1,8 +1,10 @@
 using System.Collections;
 using DG.Tweening;
+using Script.Controller;
+using Script.Other;
 using UnityEngine;
 
-namespace Script
+namespace Script.Boost
 {
     public class Ramp : MonoBehaviour
     {

@@ -1,12 +1,14 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 using DG.Tweening;
-using TMPro;
+using Script.Base;
+using Script.Interactive;
+using Script.Manager;
+using Script.Other;
+using UnityEngine;
 
-namespace Script
+namespace Script.Controller
 {
     public class StackController : MonoBehaviour
     {
@@ -33,10 +35,6 @@ namespace Script
 
             if (other.TryGetComponentInParent(out Gate gate))
             {
-                //foreach (var deletedItem in gate.Sort(stack))
-                //{
-                //    Destroy(deletedItem);
-                //}
                 switch (gate.gateType)
                 {
                     case GateType.Order:
@@ -79,7 +77,7 @@ namespace Script
 
         private void AddCube(Transform cube, Collectible collectible)
         {
-            GetComponent<TrailManager>().SetTrailMaterial(collectible.GetCubeType);
+            GetComponent<TrailController>().SetTrailMaterial(collectible.GetCubeType);
             collectible.isCollected = true;
             cube.SetParent(player.parent);
 

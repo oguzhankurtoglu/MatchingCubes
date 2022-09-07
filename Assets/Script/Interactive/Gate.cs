@@ -1,10 +1,7 @@
-using System;
-using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 
-namespace Script
+namespace Script.Interactive
 {
     public enum GateType
     {

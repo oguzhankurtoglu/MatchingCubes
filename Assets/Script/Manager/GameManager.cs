@@ -1,9 +1,7 @@
-using System;
-using Game.Script.Other;
-using Unity.VisualScripting;
+using Script.Other;
 using UnityEngine;
 
-namespace Script
+namespace Script.Manager
 {
     public enum GameState
     {

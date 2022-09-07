@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using Script.Interactive;
 using UnityEngine;
-using UnityEngine.Android;
 
-namespace Script
+namespace Script.Base
 {
     [Serializable]
     public class CheckType

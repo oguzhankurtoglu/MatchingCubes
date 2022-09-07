@@ -1,7 +1,7 @@
-using Game.Script.Other;
+using Script.Other;
 using UnityEngine;
 
-namespace Script
+namespace Script.Manager
 {
     public class FeedBackManager : MonoSingleton<FeedBackManager>
     {

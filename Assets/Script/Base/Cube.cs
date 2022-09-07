@@ -1,9 +1,7 @@
-using System;
-using Unity.VisualScripting;
+using Script.Manager;
 using UnityEngine;
-using UnityEngine.Android;
 
-namespace Script
+namespace Script.Base
 {
     public enum CubeType
     {

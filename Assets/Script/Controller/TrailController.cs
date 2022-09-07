@@ -1,10 +1,9 @@
-using Game.Script.Other;
-using TMPro;
+using Script.Base;
 using UnityEngine;
 
-namespace Script
+namespace Script.Controller
 {
-    public class TrailManager : MonoBehaviour
+    public class TrailController : MonoBehaviour
     {
         public TrailRenderer trailRenderer;
         [SerializeField] private Material[] materials;
@@ -35,16 +34,6 @@ namespace Script
                     trailRenderer.material = materials[2];
                     break;
             }
-        }
-
-        public void CloseTrail()
-        {
-            trailRenderer.enabled = false;
-        }
-
-        public void OpenTrail()
-        {
-            trailRenderer.enabled = true;
         }
     }
 }

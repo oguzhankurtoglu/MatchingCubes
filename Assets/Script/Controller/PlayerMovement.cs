@@ -1,7 +1,8 @@
 using System;
+using Script.Manager;
 using UnityEngine;
 
-namespace Script
+namespace Script.Controller
 {
     [Serializable]
     public class PlayerSettings
