@@ -16,11 +16,11 @@ namespace Script
     {
         public GateType gateType = GateType.Order;
         private TextMeshPro _text;
-        public List<Vector3> PositionList;
+       // public List<Vector3> PositionList;
 
         private void Awake()
         {
-            PositionList = new List<Vector3>();
+           // PositionList = new List<Vector3>();
             SetGateProperty();
         }
 
