@@ -16,6 +16,7 @@ namespace Script.Controller
         public Transform player;
         private CheckType _checkType;
         private Sort _sorting;
+        private bool _feverIsActive;
 
         private void Awake()
         {
@@ -46,10 +47,30 @@ namespace Script.Controller
                 }
             }
 
-            if (other.TryGetComponentInParent(out Obstacle _))
+            if (other.TryGetComponentInParent(out Obstacle obstacles))
             {
-                stack[^1].SetParent(null);
-                stack.RemoveAt(stack.Count - 1);
+                if (_feverIsActive)
+                {
+                    for (int i = 0; i < obstacles.transform.childCount; i++)
+                    {
+                        obstacles.transform.GetChild(i).GetComponent<Rigidbody>().isKinematic = false;
+                    }
+
+                    other.transform.GetComponent<Rigidbody>()
+                        .AddExplosionForce(15, other.transform.position, 50f, 0, ForceMode.Impulse);
+                }
+                else
+                {
+                    if (stack.Count > 0)
+                    {
+                        stack[^1].SetParent(null);
+                        stack.RemoveAt(stack.Count - 1);
+                    }
+                    else
+                    {
+                        GameManager.Instance.gameState = GameState.Fail;
+                    }
+                }
             }
         }
 
@@ -62,17 +83,27 @@ namespace Script.Controller
                 for (var j = 0; j < 3; j++)
                 {
                     Destroy(deletedList[^1].gameObject);
-                    deletedList.RemoveAt(deletedList.Count-1);
+                    deletedList.RemoveAt(deletedList.Count - 1);
                 }
 
                 yield return new WaitForSeconds(1f);
             }
 
-            if (removeTime >= 3)
-            {
-                Debug.Log("Fever");
-                //FeverMode();
-            }
+            if (removeTime < 3) yield break;
+            Debug.Log("Fever");
+            StartCoroutine(FeverMode());
+        }
+
+        private readonly WaitForSeconds _duration = new(5f);
+
+        private IEnumerator FeverMode()
+        {
+            transform.GetComponent<PlayerMovement>().playerSettings.forwardSpeed *= 2;
+            _feverIsActive = true;
+            yield return _duration;
+            _feverIsActive = false;
+            transform.GetComponent<PlayerMovement>().playerSettings.forwardSpeed /= 2;
+
         }
 
         private void AddCube(Transform cube, Collectible collectible)

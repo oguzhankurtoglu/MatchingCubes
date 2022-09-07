@@ -37,6 +37,14 @@ namespace Script.Controller
             transform.Translate(transform.forward * Time.fixedDeltaTime * playerSettings.forwardSpeed);
         }
 
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Finish"))
+            {
+                GameManager.Instance.gameState = GameState.Finish;
+            }
+        }
+
         private void ClampPos()
         {
             if (Input.touchCount > 0)

@@ -3,35 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="13c467d0-daff-418f-93dd-e76db3ea775a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MatchingCubes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MatchingCubes/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Obstacles/Obstacle (1).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Obstacles/Obstacle (1).prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/Obstacles/Obstacle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/Obstacles/Obstacle.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Base/CheckType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Base/CheckType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Base/Cube.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Base/Cube.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Base/Sort.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Base/Sort.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Boost/Boost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Boost/Boost.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Boost/Ramp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Boost/Ramp.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Collectible.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Collectible.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Controller/PlayerFollower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Controller/PlayerFollower.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/Controller/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Controller/PlayerMovement.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Script/Controller/StackController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Controller/StackController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Extensions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Extensions.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Interaction.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Interaction/Gate.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Interaction/Gate.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Interaction/ICube.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Interaction/ICube.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Interaction/Obstacle.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Interaction/Obstacle.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Manager/FeedBackManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Manager/FeedBackManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Manager/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Manager/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Manager/TrailManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Controller/TrailController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Manager/TrailManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Controller/TrailController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/OrderGate.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/OrderGate.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Other/MonoSingleton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Other/MonoSingleton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/RandomGate.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/RandomGate.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +80,7 @@
       <workItem from="1662289361253" duration="7541000" />
       <workItem from="1662312935794" duration="3490000" />
       <workItem from="1662338248667" duration="1468000" />
-      <workItem from="1662415258515" duration="11902000" />
+      <workItem from="1662415258515" duration="16346000" />
     </task>
     <servers />
   </component>
