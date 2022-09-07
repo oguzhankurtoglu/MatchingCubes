@@ -11,13 +11,13 @@ namespace Script
     {
         public List<Transform> stack = new();
         public Transform player;
-        public CheckType checkType;
-        public Sort Sorting;
+        private CheckType _checkType;
+        private Sort _sorting;
 
         private void Awake()
         {
-            Sorting = new Sort();
-            checkType = new CheckType();
+            _sorting = new Sort();
+            _checkType = new CheckType();
         }
 
         private void OnTriggerEnter(Collider other)
@@ -39,14 +39,14 @@ namespace Script
                 switch (gate.gateType)
                 {
                     case GateType.Order:
-                        foreach (var deletedItem in Sorting.OrderSort(ref stack))
+                        foreach (var deletedItem in _sorting.OrderSort(ref stack))
                         {
                             Destroy(deletedItem);
                         }
 
                         break;
                     case GateType.Random:
-                        foreach (var deletedItem in Sorting.RandomSort(ref stack))
+                        foreach (var deletedItem in _sorting.RandomSort(ref stack))
                         {
                             Destroy(deletedItem);
                         }
@@ -64,7 +64,7 @@ namespace Script
 
         private void AddCube(Transform cube, Collectible collectible)
         {
-            TrailManager.Instance.SetTrailMaterial(collectible.GetCubeType);
+            GetComponent<TrailManager>().SetTrailMaterial(collectible.GetCubeType);
             collectible.isCollected = true;
             cube.SetParent(player.parent);
 
@@ -73,7 +73,7 @@ namespace Script
             cube.transform.DOScale(transform.localScale * .6f, .2f).SetLoops(2, LoopType.Yoyo);
             stack.Add(cube);
 
-            if (!checkType.CheckLastPart(stack, collectible.GetCubeType)) return;
+            if (!_checkType.CheckLastPart(stack, collectible.GetCubeType)) return;
 
             for (int i = 0; i < 3; i++)
             {

@@ -1,5 +1,7 @@
 using System;
 using System.Collections;
+using System.Linq;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 namespace Script
@@ -18,6 +20,7 @@ namespace Script
         {
             var speed = playerMovement.playerSettings.forwardSpeed;
             playerMovement.playerSettings.forwardSpeed = playerMovement.playerSettings.boostSpeed;
+            playerMovement.GetComponent<TrailManager>().SetTrailMaterial(CubeType.None);
             FeedBackManager.Instance.StartBoostParticle();
 
             yield return new WaitForSeconds(duration);
@@ -26,4 +29,4 @@ namespace Script
             FeedBackManager.Instance.StopBoostParticle();
         }
     }
-}
+}       

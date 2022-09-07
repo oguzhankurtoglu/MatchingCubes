@@ -4,17 +4,14 @@ using UnityEngine;
 
 namespace Script
 {
-    public class TrailManager : MonoSingleton<TrailManager>
+    public class TrailManager : MonoBehaviour
     {
-        private StackController _stackController;
-        private static TrailRenderer _trailRenderer;
+        public TrailRenderer trailRenderer;
         [SerializeField] private Material[] materials;
-
 
         private void Awake()
         {
-            _trailRenderer = GetComponentInChildren<TrailRenderer>();
-            _stackController = GetComponent<StackController>();
+            trailRenderer = GetComponentInChildren<TrailRenderer>();
             SetTrailMaterial(CubeType.None);
         }
 
@@ -23,21 +20,31 @@ namespace Script
             switch (cubeType)
             {
                 case CubeType.None:
-                    _trailRenderer.emitting = false;
+                    trailRenderer.emitting = false;
                     break;
                 case CubeType.Blue:
-                    _trailRenderer.emitting = true;
-                    _trailRenderer.material = materials[0];
+                    trailRenderer.emitting = true;
+                    trailRenderer.material = materials[0];
                     break;
                 case CubeType.Red:
-                    _trailRenderer.emitting = true;
-                    _trailRenderer.material = materials[1];
+                    trailRenderer.emitting = true;
+                    trailRenderer.material = materials[1];
                     break;
                 case CubeType.Orange:
-                    _trailRenderer.emitting = true;
-                    _trailRenderer.material = materials[2];
+                    trailRenderer.emitting = true;
+                    trailRenderer.material = materials[2];
                     break;
             }
+        }
+
+        public void CloseTrail()
+        {
+            trailRenderer.enabled = false;
+        }
+
+        public void OpenTrail()
+        {
+            trailRenderer.enabled = true;
         }
     }
 }

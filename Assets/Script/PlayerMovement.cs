@@ -33,7 +33,7 @@ namespace Script
         {
             //_rigidbody.MovePosition(transform.position +
             //                        Vector3.forward * Time.fixedDeltaTime * playerSettings.forwardSpeed);
-            transform.Translate(transform.forward * Time.deltaTime * playerSettings.forwardSpeed);
+            transform.Translate(transform.forward * Time.fixedDeltaTime * playerSettings.forwardSpeed);
         }
 
         private void ClampPos()

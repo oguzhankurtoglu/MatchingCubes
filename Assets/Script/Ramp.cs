@@ -1,7 +1,5 @@
-using System;
 using System.Collections;
 using DG.Tweening;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Script
@@ -16,21 +14,25 @@ namespace Script
             {
                 StartCoroutine(JumpBoost(playerMovement, other, playerMovement.playerSettings.jumpDuration));
             }
+
+            if (other.TryGetComponentInChildren(out TrailRenderer trailRenderer))
+            {
+                trailRenderer.emitting = false;
+            }
         }
 
         private IEnumerator JumpBoost(PlayerMovement playerMovement, Collider other, float duration)
         {
-            other.GetComponent<Rigidbody>().isKinematic = true;
             other.GetComponent<StackController>().FreezeCubes();
             var speed = playerMovement.playerSettings.forwardSpeed;
             var distance = Vector3.Distance(other.transform.position, targetPoint.position);
             playerMovement.playerSettings.forwardSpeed = 0;
             other.transform.DOJump(targetPoint.position, playerMovement.playerSettings.jumpPower, 1,
-                distance / playerMovement.playerSettings.jumpDuration);
+                distance / duration).SetEase(Ease.Linear);
 
-            yield return new WaitForSeconds(duration);
-
-            other.GetComponent<Rigidbody>().isKinematic = false;
+            yield return new WaitForSeconds(distance / duration);
+            
+            other.GetComponentInChildren<TrailRenderer>().emitting = true;
             other.GetComponent<StackController>().UnFreezeCubes();
             playerMovement.playerSettings.forwardSpeed = speed;
         }
